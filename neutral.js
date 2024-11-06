@@ -1,5 +1,18 @@
 define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/qualtrics/quiat9.js'], function(APIConstructor, iatExtension){
     var API = new APIConstructor();
+	 var scorer = new Scorer();
+	 var piCurrent = API.getCurrent();
+	 var iatObj = {
+     isTouch: true,
+     canvas: {
+         maxWidth: 725,
+         proportions: 0.7,
+         background: '#ffffff',
+         borderWidth: 5,
+         canvasBackground: '#ffffff',
+         borderColor: 'lightblue',
+         css: { "touch-action": "manipulation" }
+     },
 	return iatExtension({
 		category1 : {
 			name : 'Words A-M', //Will appear in the data.
